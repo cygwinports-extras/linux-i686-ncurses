@@ -1,21 +1,29 @@
-CROSS_HOST="i686-linux"
-ORIG_PN="ncurses"
+CROSS_HOST="i686-pc-linux-gnu"
 inherit cross
 
-DESCRIPTION="A free software implementation of the SysV4.0 curses terminal-handling library and tools"
-HOMEPAGE="http://www.gnu.org/software/ncurses/ncurses.html"
-SRC_URI="mirror://gnu/ncurses/${ORIG_PN}-${PV}.tar.gz"
+NAME="linux-i686-ncurses"
+VERSION=5.7
+RELEASE=1
+CATEGORY="Devel"
+SUMMARY="Terminal display library for Linux i686 toolchain"
+DESCRIPTION="Ncurses (new curses) started as a freely distributable clone of
+SVr4 curses. It has outgrown the clone description, and now contains many
+features which are not in SVr4 curses. Curses is a pun on the term <<cursor
+optimization>>. It is a library of functions that manage an application's
+display on character-cell terminals (e.g., VT100)."
+HOMEPAGE="http://invisible-island.net/ncurses/"
+SRC_URI="ftp://invisible-island.net/ncurses/current/ncurses-${VERSION}.tgz"
 PATCH_URI="
-	ftp://invisible-island.net/ncurses/${PV}/ncurses-${PV}-20100424-patch.sh.bz2
-	ftp://invisible-island.net/ncurses/${PV}/ncurses-${PV}-20100501.patch.gz
-	ftp://invisible-island.net/ncurses/${PV}/ncurses-${PV}-20100515.patch.gz
-	ftp://invisible-island.net/ncurses/${PV}/ncurses-${PV}-20100522.patch.gz
-	ftp://invisible-island.net/ncurses/${PV}/ncurses-${PV}-20100529.patch.gz
-	ftp://invisible-island.net/ncurses/${PV}/ncurses-${PV}-20100605.patch.gz
-	ftp://invisible-island.net/ncurses/${PV}/ncurses-${PV}-20100612.patch.gz
-	ftp://invisible-island.net/ncurses/${PV}/ncurses-${PV}-20100619.patch.gz
-	ftp://invisible-island.net/ncurses/${PV}/ncurses-${PV}-20100626.patch.gz
-	ftp://invisible-island.net/ncurses/${PV}/ncurses-${PV}-20100703.patch.gz
+	ftp://invisible-island.net/ncurses/${VERSION}/ncurses-${VERSION}-20100424-patch.sh.bz2
+	ftp://invisible-island.net/ncurses/${VERSION}/ncurses-${VERSION}-20100501.patch.gz
+	ftp://invisible-island.net/ncurses/${VERSION}/ncurses-${VERSION}-20100515.patch.gz
+	ftp://invisible-island.net/ncurses/${VERSION}/ncurses-${VERSION}-20100522.patch.gz
+	ftp://invisible-island.net/ncurses/${VERSION}/ncurses-${VERSION}-20100529.patch.gz
+	ftp://invisible-island.net/ncurses/${VERSION}/ncurses-${VERSION}-20100605.patch.gz
+	ftp://invisible-island.net/ncurses/${VERSION}/ncurses-${VERSION}-20100612.patch.gz
+	ftp://invisible-island.net/ncurses/${VERSION}/ncurses-${VERSION}-20100619.patch.gz
+	ftp://invisible-island.net/ncurses/${VERSION}/ncurses-${VERSION}-20100626.patch.gz
+	ftp://invisible-island.net/ncurses/${VERSION}/ncurses-${VERSION}-20100703.patch.gz
 "
 
 src_compile() {
